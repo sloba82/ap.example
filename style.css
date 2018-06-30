@@ -1,0 +1,38 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-input-placeholder {
+   font-size: 20px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+      font-size: 20px;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+      font-size: 20px;
+}
+
+/* Overriding styles */
+
+::-webkit-input-placeholder {
+   font-size: 12px!important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+      font-size: 12px!important;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+      font-size: 12px!important;
+}
+
+.border {
+	margin-bottom: 10px;
+	border: 1px solid;
+	border-color: #89d7ff;
+	border-radius: 10px;
+	padding: 14px;
+}

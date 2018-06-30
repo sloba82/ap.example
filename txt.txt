@@ -1,0 +1,74 @@
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+
+class Template {
+
+	public function employerTemplate ($employerData) {
+
+		
+		
+		$mpdf = new \Mpdf\Mpdf();
+
+	
+
+		$max = sizeof($employerData);
+		for($i = 0; $i < $max; $i++) {
+
+		
+			$html = '';
+			foreach($employerData as $Data) { #as $key => $value
+
+				
+				/*var_dump($Data);*/
+				echo $Data[0] .'<br>';
+				echo $Data[1] .'<br>';
+				echo $Data[2] .'<br>';
+				echo $Data[3] .'<br>';
+				echo $Data[4] .'<br>';
+				echo $Data[5] .'<br>';
+				echo $Data[6] .'<br>';
+				echo $Data[7] .'<br>';
+						$html = '
+						<h2>Basic PDF Active Form</h2>
+						
+						
+
+						<div class="inp">'.$Data[0] .'</div>
+						<div class="inp">'.$Data[1] .'</div>
+						<div class="inp">'.$Data[2] .'</div>
+						<div class="inp">'.$Data[3] .'</div>
+						<div class="inp">'.$Data[4] .'</div>
+						<div class="inp">'.$Data[5] .'</div>
+						<div class="inp">'.$Data[6] .'</div>
+						<div class="inp">'.$Data[7] .'</div>
+						
+						';
+
+
+
+			}
+
+			
+
+				$mpdf->useActiveForms = true;
+				$mpdf->formUseZapD = false;
+				$mpdf->form_border_color = '0.6 0.6 0.72';
+				$mpdf->form_button_border_width = '2';
+				$mpdf->form_button_border_style = 'S';
+				$mpdf->form_radio_color = '0.0 0.0 0.4'; // radio and checkbox
+				$mpdf->form_radio_background_color = '0.9 0.9 0.9';
+				$mpdf->WriteHTML($html);
+
+				$name = $i.time().'.pdf';
+				/*ob_clean();*/
+				$mpdf->Output('pdf/'.$name,'F');
+				
+		}
+
+		
+	}
+
+
+}

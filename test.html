@@ -1,0 +1,322 @@
+	
+
+		<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		table {
+		    border-collapse: collapse;
+		}
+
+		table, th, td {
+		    border: 1px solid black;
+		}
+		.tableFont table, th, td {
+			font-size: 10px;
+		}
+		body {
+			font-size: 10px;
+		}
+		p {
+			padding: 0px;
+			margin-bottom: 5px;
+			margin-top: 5px;
+			margin-right: 0px;
+			margin-left: 0px;
+		}
+		h3 {
+			font-size: 12px;
+			padding: 3px;
+			margin: 0px;
+		}
+		h2 {
+			font-size: 14px;
+			padding: 3px;
+			margin: 0px;
+		}
+		h1 {
+			font-size: 16px;
+			text-align: center;
+			padding: 3px;
+			margin: 0px;
+		}
+
+	</style>
+</head>
+<body>
+
+<div style="border-bottom: 1px solid black;">
+	<h1>SAFETY  PERFORMANCE  HISTORY  RECORDS REQUEST</h1>	
+</div>
+<div style="border: 1px solid black; padding: 5px;">
+	<div style="background-color:#d3d3d3;">
+		<h2>PART 1 | TO BE COMPLETED BY PROSPECTIVE EMPLOYEE</h2>
+	</div>
+		<div style="background-color: #f4f6f9; margin-bottom: 5px; margin-top: 5px;">
+		<h3>Prospective Employee data:</h3>
+			<table class="tableFont" style="width:100%;">
+			  <tr>
+			    <td>First Name:  <div><b>'.$post['first_name'].' </b></div></td>
+			    <td>Middle Name: <div><b>'.$post['middle_name'].' </b></div></td> 
+			    <td>Maiden Name: <div><b>'.$post['maiden_name'].'</b></div></td>
+			    <td>Last Name: <div><b>'.$post['last_name'].'</b></div></td>
+			  </tr>
+			  <tr>
+				<td>Social Securyty No: <div><b>'.$post['social_securyty'].' </b></div></td>
+				<td>Date of Birth:: <div><b>'.$post['date_birth'].'</b></div></td>
+				<td></td>
+				<td></td>
+			  </tr>
+			</table>
+		</div>
+	<div>
+		<h3>Hereby authorize:</h3>
+		<table style="width:100%;">
+		  <tr>
+		    <td>Previous Employer: <div><b>'. $name .'</b></div></td>
+		    <td>Street: <div><b>'.$address .'</b></div></td> 
+		    <td>City, State, Zip: <div><b>'.$cityStateZip .'</b></div></td>
+		  </tr>
+		  <tr>
+		  	<td>Email: <div><b>'.$email .'</b></div></td>
+		  	<td>Employer phone: <div><b>'.$phone .'</b></div></td>
+		  </tr>
+		</table>
+	</div>
+	<div>
+		<p>
+		To release and forward the information requested by section 3 of this document concerning my Alcohol and Controlled
+		Substances Testing records within the previous 3 years from '.$post['user_time'].'.
+		</p>
+	</div>
+	<ul> 
+	<li>To:
+	    <ul>
+		    <li>Prospective Employer: <b>ABRAM EXPEDITED LLC</b></li>
+		    <li>Attention:            <b>DARKO  ABRAMOVIC</b></li>
+		    <li>Street:               <b>5087 MATRIN LUTHER KING JR </b></li>
+		    <li>City, State, Zip:     <b>FORT WORTH,  TX 76119</b></li>
+		    <li>Telephone:            <b>817-917-8735</b></li>
+	    </ul>
+	  </li>
+	</ul>
+	<div>
+	 	<p>In compliance with §40.25(g) and 391.23(h), release of this information must be made in a written form that ensures confidentiality, such as fax, email, or letter.
+	 	</p>
+	</div>
+ 	<ul>
+	 	<li>Prospective employer&#39;s fax number:    <b>214-988-1663</b></li>
+	 	<li>Prospective employer&#39;s email address: <b>office@abramexpedited.com</b></li>
+ 	</ul>
+ 	<div style="margin-left: 300px;">
+ 		<div style="font-family:signiture; font-size:20px;">
+ 			'.$post['first_name'].' '.$post['last_name'].'
+ 		</div>
+ 		<div style="border-top:1px solid black; padding-top:2px; width: 100px; text-align: center;">
+ 			Applicant&#39;s Signature 
+ 		</div>
+ 		<div style="margin-top: 3px;">
+ 			Date: '.$post['user_time'].'.
+ 		</div>
+ 	</div>
+
+ 	<div style="margin-top: 15px;">
+ 		<p>
+ 		This information is being requested in compliance with §40.25(g) and 391.23	
+ 		</p>
+ 	</div>
+</div>
+
+<div style="border: 1px solid black; padding: 5px; margin-top: 5px;">
+	<div style="background-color:#d3d3d3;">
+		<h2>PART 2 | TO BE COMPLETED  BY PREVIOUS EMPLOYER</h2>
+	</div>
+
+	<form action="#" method="post">
+		<h3>ACCIDENT HISTORY</h3>
+		<div style="margin-top: 10px;">
+			The applicant named above was employed by us.  Yes <input type="checkbox" name="aplicant" value="yes" /> No <input type="checkbox" name="aplicantno" value="no"/>
+		</div>
+
+		<div style="margin-top: 5px;">
+			Employed as  <input type="text" name="employed_as" size="40"/> from (m/y) <input type="text" name="employed_from" size="20"/> to (m/y) <input type="text" name="employed_to" size="20"/>
+		</div>
+		<div  style="margin-top: 3px;">
+		1.	Did he/she drive motor vehicle for you? Yes <input type="checkbox" name="drive_yes" value="yes" /> No <input type="checkbox" name="drive_no" value="no"/>  If yes, what type?  Straight Truck <input type="checkbox" name="straight" value="yes" />   Tractor-Semitrailer <input type="checkbox" name="semitrailer" value="yes" />  Bus <input type="checkbox" name="bus" value="yes" />  Cargo Tank <input type="checkbox" name="cargoTank" value="yes" />  Doubles/Triples <input type="checkbox" name="duble" value="yes" />   Other <input type="text" name="other" size="40" />
+		</div>
+		<div  style="margin-top: 3px;">
+		2.	Reason for leaving your employ: Discharged <input type="checkbox" name="discharged" value="yes" />	Resignation <input type="checkbox" name="resigned" value="yes" />  Lay Off <input type="checkbox" name="layoff" value="yes" />  Military Duty <input type="checkbox" name="militaryduty" value="yes" /> If there is no safety performance history to report, check here <input type="checkbox" name="drive_yes" value="yes" />, sign below and return.
+		</div>
+		
+		<div  style="margin-top: 8px;">
+		<b>ACCIDENTS:</b> Complete the following for any accidents included on your accident register (§390.15(b)) that involved the applicant in the 3 years prior to the application date shown above, or check D here if there is no accident register data for this driver.
+		</div>
+		<div style="margin-top: 3px;">
+			<table class="tableFont" style="width:100%;">
+			  <tr>
+			  	<th>No.</th>
+				<th>Date</th>
+				<th>Location</th>
+				<th># Injuries</th>
+				<th># Fatalities</th>
+				<th>Hazmat Spill</th>
+			  </tr>
+			  <tr>
+			  	<th>1</th>
+			  	<th><input type="text" name="date" size="40"/></th>
+			  	<th><input type="text" name="location" size="40"/></th>
+			  	<th><input type="text" name="injuries" size="40"/></th>
+			  	<th><input type="text" name="fatalaties" size="40"/></th>
+			  	<th><input type="text" name="hazmatspill" size="40"/></th>
+			  </tr>
+			  <tr>
+			  	<th>2</th>
+			  	<th><input type="text" name="date2" size="40"/></th>
+			  	<th><input type="text" name="location2" size="40"/></th>
+			  	<th><input type="text" name="injuries2" size="40"/></th>
+			  	<th><input type="text" name="fatalaties2" size="40"/></th>
+			  	<th><input type="text" name="hazmatspill2" size="40"/></th>
+			  </tr>
+			  <tr>
+			  	<th>3</th>
+			  	<th><input type="text" name="date3" size="40"/></th>
+			  	<th><input type="text" name="location3" size="40"/></th>
+			  	<th><input type="text" name="injuries3" size="40"/></th>
+			  	<th><input type="text" name="fatalaties3" size="40"/></th>
+			  	<th><input type="text" name="hazmatspill3" size="40"/></th>
+			  </tr>
+			</table>
+		</div>
+
+		<div style="margin-top: 10px;">
+		Please provide information concerning any other accidents involving the applicant that were reported to government agencies or insurers or retained under internal company policies: 
+		<div>
+			<input type="text" name="informatioaccidents" size="300"/>
+		</div>
+		</div>
+
+		<div style="margin-top: 5px;">
+		Any other remarks: 
+		<div>
+			<input type="text" name="otherremarks" size="300"/>
+		</div>
+		</div>
+
+		<div style="margin-top: 10px; margin-left: 450px;">
+			<div>
+				Signature: <input type="text" name="signiture" size="45"/>
+			</div>
+			<div style="margin-top: 5px;">
+				Title: <input type="text" name="Title" size="20"/> Date <input type="text" name="signituretitle" size="20"/> 
+
+			</div>
+		</div>
+
+
+	</form>
+
+
+</div>
+
+<div style="border: 1px solid black; padding: 5px; margin-top: 5px;">
+	<div style="background-color:#d3d3d3;">
+		<h2>PART 3 | TO BE COMPLETED BY PREVIOUS EMPLOYER</h2>
+	</div>
+	<form action="#" method="post">
+	<h3>DRUG AND ALCOHOL HISTORY</h3>
+		<div style="margin-top: 5px;">
+			If driver was not subject to Department of Transportation testing requirements while employed by this employer, please check here <input type="checkbox" name="subjecto" value="yes" />, fill in the dates of employment from <input type="text" name="dateform" size="20"/> to <input type="text" name="dateto" size="20"/>, complete bottom of Part 3, sign, and return.
+		</div>
+
+		<div style="margin-top: 10px;">
+			Driver was subject to Department of Transportation testing requirements from <input type="text" name="subjectdateform" size="20"/> to <input type="text" name="subjectdateto" size="20"/>
+		</div>
+
+		<div style="margin-top: 10px;">
+			1.	Has this person had an alcohol test with the result of 0.04 or higher alcohol concentration? Yes <input type="checkbox" name="alcoholdrive_yes" value="yes" /> No <input type="checkbox" name="alcoholdrive_no" value="no"/> 
+		</div>
+
+		<div style="margin-top: 5px;">
+			2.  Has this person tested positive or adulterated or substituted a test specimen for controlled substances? Yes <input type="checkbox" name="positivesubdrive_yes" value="yes" /> No <input type="checkbox" name="positivesubdrive_no" value="no"/> 
+		</div>
+
+		<div style="margin-top: 5px;">
+			3.	Has this person refused to submit to a post-accident, random, reasonable suspicion,
+			or follow-up alcohol or substance test? Yes <input type="checkbox" name="refusedtest_yes" value="yes" /> No <input type="checkbox" name="refusedtest_no" value="no"/>
+		</div>
+
+		<div style="margin-top: 5px;">
+			4.	Has this person committed other violations of Subpart B of Part 382, or Part 40? Yes <input type="checkbox" name="violations_yes" value="yes" /> No <input type="checkbox" name="violations_no" value="no"/>
+		</div>
+
+		<div style="margin-top: 5px;">
+			5.	If this person has violated a DOT drug and alcohol regulation, did this person complete a SAP-prescribed n program in your employ, including return-to-duty and follow-up tests?
+			If yes, please send documentation back with this form. Yes <input type="checkbox" name="violations_yes" value="yes" /> No <input type="checkbox" name="violations_no" value="no"/>
+		</div>
+		<div style="margin-top: 5px;">
+			6.  For a driver who successfully completed a SAP&#39;s rehabilitation referral and remained in your employ, did this driver subsequently have an alcohol test result of 0.04 or greater,
+			 a verified positive drug test, or refuse to be tested? Yes <input type="checkbox" name="violations_yes" value="yes" /> No <input type="checkbox" name="violations_no" value="no"/>
+		</div>
+
+		<div style="margin-top: 10px;">
+			In answering these questions, include any required DOT drug or alcohol testing information obtained from prior previous previous 3 years prior to the application date shown on page 1
+		</div>
+
+		<div style="margin-top: 10px;">
+			
+			<div style="margin-top: 5px;">
+				Name: <input type="text" name="namecompany" size="106"/>
+			</div>
+			<div style="margin-top: 5px;">
+				Company: <input type="text" name="companycompany" size="100"/>
+			</div>
+			<div style="margin-top: 5px;">
+				Street: <input type="text" name="streetcompany" size="106"/>
+			</div>
+			<div style="margin-top: 5px;">
+				City, State, Zip: <input type="text" name="cityzipcompany" size="70"/> Telephone: <input type="text" name="telephonecompany" size="50"/>
+			</div>
+			<div style="margin-top: 5px;">
+				Part 3 Completed by (Signiture): <input type="text" name="signiturecompany" size="70"/> Date: <input type="text" name="signiturecompany" size="30"/>
+			</div>
+
+		</div>
+
+
+	</form>
+
+
+</div>
+
+<div style="border: 1px solid black; padding: 5px; margin-top: 5px;">
+	<form action="#" method="post">
+	<div style="background-color:#d3d3d3;">
+		<h2>PART 4a | TO BE COMPLETED BY PROSPECTIVE EMPLOYER</h2>
+	</div>
+	<div style="margin-top: 5px;">
+		This form was (check one) <input type="checkbox" name="faxe" value="yes" />  Faxed to previous employer	 <input type="checkbox" name="mailed" value="yes" /> Mailed <input type="checkbox" name="emailer" value="yes" />  Emailed <input type="checkbox" name="other4b" value="yes" /> Other <input type="text" name="chackother" size="20"/> 
+	</div>
+	<div style="margin-top: 5px;">
+		By: <input type="text" name="by" size="70"/> Date: <input type="text" name="dateby" size="20"/>
+	</div>
+
+	</form>
+</div>
+
+<div style="border: 1px solid black; padding: 5px; margin-top: 5px;">
+	<form action="#" method="post">
+	<div style="background-color:#d3d3d3;">
+		<h2>PART 4b | TO BE COMPLETED BY PROSPECTIVE EMPLOYER</h2>
+	</div>
+	<div style="margin-top: 5px;">
+		Information received from: <input type="text" name="information" size="140"/> 
+	</div>
+	<div style="margin-top: 5px;">
+		Recorded by: <input type="text" name="recorded" size="100"/> Method:  <input type="checkbox" name="recfaxe" value="yes" /> Fax   <input type="checkbox" name="recfmail" value="yes" /> Mail   <input type="checkbox" name="recemail" value="yes" />  Email   <input type="checkbox" name="rectehele" value="yes" /> Telephone <input type="text" name="rectelnumbrer" size="20"/> 
+	</div>
+	<div style="margin-top: 5px;">
+		Date <input type="text" name="4bdate" size="50"/>  <input type="checkbox" name="4bother" value="yes" /> Other <input type="text" name="4bother2" size="50"/>
+	</div>
+
+	</form>
+</div>

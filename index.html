@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<head>
+    <title>APPLICATION FOR EMPLOYMENT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="datetimepicker/jquery.datetimepicker.css">
+
+</head>
+<body>
+
+<div class="container">
+    <form id="emploer" method="post" action="pta.php">
+        <input name="user_time" type="hidden" class="form-control" value="" id="user_time">
+
+        <div style="text-align: center; padding: 20px;">
+            <h4>
+                APPLICATION FOR EMPLOYMENT
+
+            </h4>
+        </div>
+        <div class="border">
+            <div class="form-row">
+                <div class="col-md-3 mb-2">
+                    <label for="first_name">First Name:</label>
+                    <input name="first_name" type="text" class="form-control" id="first_name" required>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <label for="middle_name">Middle Name:</label>
+                    <input name="middle_name" type="text" class="form-control" id="middle_name">
+                </div>
+                <div class="col-md-3 mb-2">
+                    <label for="maiden_name">Maiden Name, if any:</label>
+                    <input name="maiden_name" type="text" class="form-control" id="maiden_name">
+                </div>
+                <div class="col-md-3 mb-2">
+                    <label for="last_name">Last Name:</label>
+                    <input name="last_name" type="text" class="form-control" id="last_name" required>
+                </div>
+            </div>
+
+
+            <div class="form-row ">
+                <div class="col-md-3 mb-2">
+                    <label for="address_street">Address Street:</label>
+                    <input name="address_street" type="text" class="form-control" id="address_street" required>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <label for="city">City:</label>
+                    <input name="city" type="text" class="form-control" id="city" required>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <label for="state">State:</label>
+                    <input name="state" type="text" class="form-control" id="state" required>
+                </div>
+                 <div class="col-md-2 mb-2">
+                    <label for="stateZip">Zip code:</label>
+                    <input name="stateZip" type="text" class="form-control" id="stateZip" required>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <label for="how_long">How Long?:</label>
+                    <input name="how_long" type="text" class="form-control" id="how_long" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-4 mb-2">
+                    <label for="date_birth">Date of Birth:</label>
+                    <input name="date_birth" type="text" class="form-control datetimepicker" autocomplete="off"
+                           id="date_birth" required>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <label for="social_securyty">Social Security No.:</label>
+                    <input name="social_securyty" type="text" class="form-control" id="social_securyty" required>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <label for="hire_date">Hire Date:</label>
+                    <input name="hire_date" type="text" class="form-control datetimepicker" id="hire_date"
+                           autocomplete="off" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-6 mb-2">
+                    <label for="tel_number">Telephone Number:</label>
+                    <input name="tel_number" type="text" class="form-control" id="tel_number" required>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <label for="mail">E-mail Address:</label>
+                    <input name="mail" type="email" class="form-control" id="mail" required>
+                </div>
+            </div>
+
+            <h6>
+                PREVIOUS THREE YEARS RESIDENCY
+            </h6>
+            <ul id="previouslist">
+                <li id="previousLIlist0">
+                    <div class="form-row border-bottom border-bottom-4 border-success">
+
+                        <div class="col-md-3 mb-2">
+                            <label for="address_street">Address Street:</label>
+                            <input name="previous_address_street_0" type="text" class="form-control" id="address_street0"
+                                   required>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <label for="city">City:</label>
+                            <input name="previous_city_0" type="text" class="form-control" id="city0" required>
+                        </div>
+                        <div class="col-md-2 mb-2">
+                            <label for="state0">State:</label>
+                            <input name="previous_state_0" type="text" class="form-control" id="state0" required>
+                        </div>
+                        <div class="col-md-2 mb-2">
+                            <label for="stateZip0">Zip code:</label>
+                            <input name="previous_stateZip_0" type="text" class="form-control" id="stateZip0" required>
+                        </div>
+                        <div class="col-md-2 mb-2">
+                            <label for="how_long"># Years:</label>
+                            <input name="previous_how_long_0" type="text" class="form-control" id="how_long0" required>
+                        </div>
+
+                    </div>
+                    <div style="height: 20px;"></div>
+                </li>
+            </ul>
+
+
+            <div class="row justify-content-center">
+                <button type="button" id="previous" class="btn btn-outline-success">PLEASE ADD PREVIOUS YEARS OF
+                    RESIDENCY
+                </button>
+            </div>
+
+
+        </div>
+        <div class="border">
+            <div>
+                <h6>
+                    LICENSE INFORMATION
+                </h6>
+
+                <p>
+                    Section 383.21 FMCSR states "No person who operates a commercial motor vehicle shall at any time
+                    have more than one driver 's license". I certify that I do not have more than one motor vehicle
+                    license , the information for which is listed below.
+                </p>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-3 mb-4">
+                    <label for="license_state">State:</label>
+                    <input name="license_state" type="text" class="form-control" id="license_state" required>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <label for="license_number">License Number:</label>
+                    <input name="license_number" type="text" class="form-control" id="license_number" required>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <label for="license_type">Type:</label>
+                    <input name="license_type" type="text" class="form-control" id="license_type" required>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <label for="license_expiration">Expiration Date:</label>
+                    <input name="license_expiration" type="text" class="form-control datetimepicker"
+                           id="license_expiration" autocomplete="off" required>
+                </div>
+            </div>
+        </div>
+        <div class="border">
+            <div>
+                <h6>
+                    DRIVING EXPERIENCE
+
+                </h6>
+
+                <p>* class of equipment</p>
+            </div>
+
+            <div class="form-row bg-light">
+                <div class="col-md-2 mb-2">
+                    <div class="align-middle">
+                        STRAIGHT TRUCK:
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <input name="driving_straight_type" type="text" class="form-control" id="driving_straight_type"
+                           placeholder="TYPE OF EQUIPMENT (VAN, TANK , FLAT, ETC.)">
+                </div>
+                <div class="col-md-2 mb-2">
+                    <input name="driving_straight_from" type="text" class="form-control datetimepicker"
+                           autocomplete="off" id="driving_straight_from" placeholder="Date From:">
+                </div>
+                <div class="col-md-2 mb-2">
+                    <input name="driving_straight_to" type="text" class="form-control datetimepicker" autocomplete="off"
+                           id="driving_straight_to" placeholder="Date To:">
+                </div>
+                <div class="col-md-2 mb-2">
+                    <input name="driving_straight_miles" type="text" class="form-control" id="driving_straight_miles"
+                           placeholder="APPROX.NO.OF MILES:">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-2 mb-2">
+                    <div class="align-middle">
+                        TRACTOR AND SEMI-TRAILER:
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <input name="driving_tractor_type" type="text" class="form-control" id="driving_tractor_type"
+                           placeholder="TYPE OF EQUIPMENT (VAN, TANK , FLAT, ETC.)">
+                </div>
+                <div class="col-md-2 mb-2">
+                    <input name="driving_tractor_from" type="text" class="form-control datetimepicker"
+                           autocomplete="off" id="driving_tractor_from" placeholder="Date From:">
+                </div>
+                <div class="col-md-2 mb-2">
+                    <input name="driving_tractort_to" type="text" class="form-control datetimepicker" autocomplete="off"
+                           id="driving_tractor_to" placeholder="Date To:">
+                </div>
+                <div class="col-md-2 mb-2">
+                    <input name="driving_tractor_miles" type="text" class="form-control" id="driving_tractor_miles"
+                           placeholder="APPROX.NO.OF MILES:">
+                </div>
+            </div>
+
+            <div class="form-row bg-light">
+                <div class="col-md-2 mb-2">
+                    <div class="align-middle">
+                        TRACTOR- TWO TRAILERS
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <input name="driving_tractor_two_type" type="text" class="form-control"
+                           id="driving_tractor_two_type" placeholder="TYPE OF EQUIPMENT (VAN, TANK , FLAT, ETC.)">
+                </div>
+                <div class="col-md-2 mb-2">
+                    <input name="driving_tractor_two_from" type="text" class="form-control datetimepicker"
+                           autocomplete="off" id="driving_tractor_two_from" placeholder="Date From:">
+                </div>
+                <div class="col-md-2 mb-2">
+                    <input name="driving_tractor_twot_to" type="text" class="form-control datetimepicker"
+                           autocomplete="off" id="driving_tractor_two_to" placeholder="Date To:">
+                </div>
+                <div class="col-md-2 mb-2">
+                    <input name="driving_tractor_two_miles" type="text" class="form-control"
+                           id="driving_tractor_two_miles" placeholder="APPROX.NO.OF MILES:">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-2 mb-3">
+                    <div class="align-middle">
+                        OTHER
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <input name="driving_other_type" type="text" class="form-control" id="driving_other_type"
+                           placeholder="TYPE OF EQUIPMENT (VAN, TANK , FLAT, ETC.)">
+                </div>
+                <div class="col-md-2 mb-3">
+                    <input name="driving_other_from" type="text" class="form-control datetimepicker" autocomplete="off"
+                           id="driving_other_from" placeholder="Date From:">
+                </div>
+                <div class="col-md-2 mb-3">
+                    <input name="driving_other_to" type="text" class="form-control datetimepicker" autocomplete="off"
+                           id="driving_other_to" placeholder="Date To:">
+                </div>
+                <div class="col-md-2 mb-3">
+                    <input name="driving_other_miles" type="text" class="form-control" id="driving_other_miles"
+                           placeholder="APPROX.NO.OF MILES:">
+                </div>
+            </div>
+        </div>
+        <div class="border">
+            <div>
+                <h6>
+                    ACCIDENT RECORD FOR PAST 3 YEARS OR MORE
+                </h6>
+
+            </div>
+
+
+            <ul id="accidentlist">
+                <li id="accidentLIlist0">
+                    <div class="form-row border-bottom border-bottom-4 border-success">
+                        <div class="col-md-2 mb-3">
+                            <input name="accident_accident_date_0" type="text" class="form-control datetimepicker"
+                                   id="accident_date" autocomplete="off" placeholder="DATES:">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <input name="accident_nature_of_accident_0" type="text" class="form-control"
+                                   id="nature_of_accident"
+                                   placeholder="NATURE OF ACCIDENT (HEAD-ON , REAR-END , UPSET, ETC.)">
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <input name="accident_number_fatalities_0" type="number" class="form-control"
+                                   id="number_fatalities" placeholder="NUMBER FATALITIES">
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <input name="accident_number_injuries_0" type="number" class="form-control"
+                                   id="number_injuries" placeholder="NUMBER INJURIES">
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <select class="form-control" name="accident_chemical_spill_0">
+                                <option value="yes" selected>CHEMICAL SPILLS</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div style="height: 20px;"></div>
+                </li>
+            </ul>
+
+            <div class="row justify-content-center">
+                <button type="button" id="accident" class="btn btn-outline-success">PLEASE ADD ANOTHER ACCIDENT RECORD
+                </button>
+            </div>
+
+        </div>
+        <div class="border">
+            <div>
+                <h6>
+                    TRAFFIC CONVICTIONS AND FORFEITURES FOR THE PAST 3 YEARS (OTHER THAN PARKING VIOLATIONS)
+                </h6>
+            </div>
+
+            <ul id="convictilist">
+                <li id="convictiLIlist0">
+                    <div class="form-row border-bottom border-bottom-4 border-success">
+                        <div class="form-row">
+                            <div class="col-md-2 mb-3">
+                                <input name="convicti_date_convicted_0" type="text" class="form-control datetimepicker"
+                                       id="date_convicted" autocomplete="off" placeholder="DATE CONVICTED:">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input name="convicti_violation_0" type="text" class="form-control" id="violation"
+                                       placeholder="VIOLATION:">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input name="convicti_state_violation_0" type="text" class="form-control"
+                                       id="state_violation" placeholder="STATE OF VIOLATION LOCATION:">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <input name="convicti_penalty_0" type="text" class="form-control" id="penalty"
+                                       placeholder="PENALTY (forfeited bond, collateral and/or points)">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height: 20px;"></div>
+                </li>
+            </ul>
+            <div class="row justify-content-center">
+                <button type="button" id="trafic_conviction" class="btn btn-outline-success">PLEASE ADD ANOTHER TRAFFIC
+                    CONVICTIONS
+                </button>
+            </div>
+
+        </div>
+        <div class="border">
+            <div class="form-row">
+                <div class="col-md-7 mb-3">
+                    A. Have you ever been denied a license, permit or privilege to operate a motor vehicle?
+                </div>
+                <div class="col-md-1 mb-3">
+                    <select class="form-control" name="denied_license" required>
+                        <option>--</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <input name="denied_license_explain" type="text" class="form-control" id="denied_license"
+                           placeholder="If  yes ,  explain:">
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="col-md-7 mb-2">
+                    B. Has any license , permit or privilege ever been suspended or revoked?
+                </div>
+                <div class="col-md-1 mb-2">
+                    <select class="form-control" name="suspended_license" required>
+                        <option>--</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <input name="suspended_license_explain" type="text" class="form-control" id="suspended_license"
+                           placeholder="If  yes ,  explain:">
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="border">
+
+            <div>
+                <h6>
+                    PREVIUS EMPLOYMENT HISTORY
+                </h6>
+            </div>
+
+            <div style="border: 1px black solid; padding: 10px; margin-bottom: 20px;">
+                <p>
+                    Applicants that desire to drive in intrastate/interstate commerce must provide the following
+                    information on all employers during the previous three years. You must give the same information for
+                    all employers you have driven a commercial motor vehicle for the seven years prior to the initial
+                    three years (total of ten years employment record).
+                </p>
+            </div>
+
+
+            <ul id="employerlist">
+                <li id="emploerLIlist0">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-2">
+                            <label for="employer_name">Last employer name:</label>
+                            <input name="employer_name_0" type="text" class="form-control" id="employer_name"
+                                   placeholder="Last employer name" required>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label for="employer_address">Last employer address:</label>
+                            <input name="employer_address_0" type="text" class="form-control" id="employer_address"
+                                   placeholder="Last employer address" required>
+                        </div>
+
+                    </div>
+                    
+                    <div class="form-row">    
+                        <div class="col-md-4 mb-2">
+                            <label for="employer_city_0">City:</label>
+                            <input name="employer_city_0" type="text" class="form-control"
+                                   id="employer_city_0" placeholder="City" required>
+                        </div>
+                        <div class="col-md-4 mb-2">
+                            <label for="employer_state_0">State:</label>
+                            <input name="employer_state_0" type="text" class="form-control"
+                                   id="employer_state_0" placeholder="State" required>
+                        </div>
+                        <div class="col-md-4 mb-2">
+                            <label for="employer_zip">Zip:</label>
+                            <input name="employer_zip_0" type="text" class="form-control"
+                                   id="employer_zip" placeholder="Zip" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-6 mb-2">
+                            <label for="employer_address_email">Last employer e-mail:</label>
+                            <input name="employer_address_email_0" type="email" class="form-control"
+                                   id="employer_address_email" placeholder="Last employer e-mail">
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label for="employer_phone">Employer phone:</label>
+                            <input name="employer_phone_0" type="text" class="form-control" id="employer_phone"
+                                   placeholder="Employer phone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3 mb-2">
+                            <label for="position_held">Position held</label>
+                            <input name="employer_position_held_0" type="text" class="form-control" id="position_held"
+                                   required>
+                        </div>
+                        <div class="col-md-2 mb-2">
+                            <label for="employer_position_held_from">Position held from</label>
+                            <input name="employer_position_held_from_0" type="text" class="form-control datetimepicker"
+                                   id="employer_position_held_from" autocomplete="off" required>
+                        </div>
+                        <div class="col-md-2 mb-2">
+                            <label for="position_held_to">Position held to</label>
+                            <input name="employer_position_held_to_0" type="text" class="form-control datetimepicker"
+                                   id="position_held_to" autocomplete="off" required>
+                        </div>
+                        <div class="col-md-2 mb-2">
+                            <label for="employer_salary">Salary</label>
+                            <input name="employer_salary_0" type="text" class="form-control" id="employer_salary"
+                                   required>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <label for="employer_salary">Reasons for leaving</label>
+                            <input name="employer_leaving_0" type="text" class="form-control" id="employer_leaving"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-4">
+                            <label for="employer_explaned">Any gaps in employment and/or unemployment must be explained.
+                                Include dates (month/year) and reason: </label>
+                            <input name="employer_explaned_0" type="text" class="form-control" id="employer_explaned">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-10 mb-2">
+                            Were you subject to the Federal Motor Carrier Safety Regulations (FMCSRs) while employed by
+                            the previous employer?
+                        </div>
+                        <div class="col-md-2 mb-2">
+                            <select class="form-control" name="employer_subject_Safety_Regulations_0">
+                                <option>--</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row border-bottom border-bottom-4 border-success">
+                        <div class="col-md-10 mb-3">
+                            Was the previous job position designated as a safety sensitive function in any DOT regulated
+                            mode, subject to alcohol and controlled substances testing requirements as required by 49
+                            CFR Part 40?
+
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <select class="form-control" name="employer_subject_to_alcohol_0">
+                                <option>--</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div style="height: 20px;"></div>
+                </li>
+            </ul>
+
+
+
+            <div class="row justify-content-center">
+                <button type="button" id="clickon" class="btn btn-outline-success">PLEASE ADD ANOTHER EMPLOYER</button>
+            </div>
+            <div style="height: 20px;"></div>
+
+        </div>
+
+
+
+<div class="border">
+	            <div>
+	                <h6>
+	                    TO BE READ AND AGREED BY APPLICANT
+	                </h6>
+	            </div>
+
+	            <div style="border: 1px black solid; padding: 10px; margin-bottom: 20px;">
+<p>
+I authorize You To Make Sure Investigations And Inquiries To My Personal, Employment, Financial Or Medical History And Other Related Matters As May Be Necessary In Arriving At An Employment Decision.  (Generally, Inquiries Regarding Medical History Will Be Made Only If And After A Conditional Offer Of Employment Has Been Extended.)  I Hereby Release Employers, Schools, Health Care Providers And Other Persons From All Liability In Responding To Inquiries And Releasing Information In Connection With My Application.
+<p>
+In The Event Of Employment. I Understand That False Or Misleading Information Given In My Application Or Interview(S) May Result In Discharge.  I Understand, Also, That I Am Required To Abide By All Rules And Regulations Of The Company.
+</p>
+<p>
+"I Understand That Information I Provide Regarding Current And/Or Previous Employers May Be Used, And Those Employer(S) Will Be Contacted, For The Purpose Of Investigating My Safety Performance History As Required By 49 Cfr 391.23(D) And (E).  I Understand That I Have The Right To:
+</p>
+<p>
+* Review Information Provided By Current/Previous Employers;
+</p>
+<p>
+* Have Errors In The Information Corrected By Previous Employers And For Those Previous Employers To Re-Send The Corrected Information To The Prospective Employer; And
+</p>
+<p>
+* Have A Rebuttal Statement Attached To The Alleged Erroneous Information, If The Previous Employer(S) And I Cannot Agree On The
+Accuracy Of The Information."
+</p>
+
+<div class="checkbox checkbox-primary">
+    <input id="checkbox2" type="checkbox" required >
+        <label for="checkbox2">
+        	<b> I have read this Agreement and agree to the terms and conditions. </b>
+        </label>
+</div>
+
+
+    
+    </div>
+</div>
+
+        <button type="submit" class="btn btn-primary col-md-12">Submit</button>
+    </form>
+</div>
+<div style="height: 30px;"></div>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="custom.js"></script>
+<script src="datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+</body>
+</html> 
+
