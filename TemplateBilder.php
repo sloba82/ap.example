@@ -52,17 +52,19 @@ class TemplateBilder
             $mpdf->Output($name, 'F');
             $html = '';
             $fileName[] = $name;
-        }
 
+            unset($mpdf);
+        }
+        
         return $fileName;
 
     }
 
 
-public function clean($string) {
-   $string = str_replace(' ', '_', $string); // Replaces all spaces with hyphens.
-   return preg_replace('/[^A-Za-z0-9\_]/', '', $string); 
-}
+    public function clean($string) {
+       $string = str_replace(' ', '_', $string);
+       return preg_replace('/[^A-Za-z0-9\_]/', '', $string); 
+    }
 
 
     public function futureEmployeeTemplate($previous, $accident, $convicti, $employerData, $post)
@@ -98,6 +100,7 @@ public function clean($string) {
         $html = '';
         $fileName = $name;
 
+        unset($mpdf);
         return $fileName;
 
     }

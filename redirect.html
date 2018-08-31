@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Redirect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="datetimepicker/jquery.datetimepicker.css">
+
+<style type="text/css">
+    
+    body{
+        background-color: #686868;
+    }
+</style>
+
+</head>
+<body>
+
+
+
+    <div style="width: 100%;  margin-top:10%; background-color: #FFFFFF; padding-bottom: 20px;">
+        <div style="border-left: 5px solid #21618C;  padding: 10px; margin-left: 20%; margin-right: 20%; margin-bottom:10px; margin-top: 10px;">
+            <h3 style="color:#21618C;">
+ 				Thank you for application! <br>
+                We will contact you soon as possible.
+            </h3>
+            <p>
+             Massage is sent to your email. <br>
+             Please contact us if you have any question regarding your job application. <br>
+             You will be redirected to home page in 15 seconds. Thank you! <br>
+	            <a href="https://www.abramexpedited.com/">
+	            Click here if you want to go to home page immediately 
+	            </a>
+            </p>
+        </div>
+    </div>
+
+
+
+<script>	
+window.onload = function() {
+    // similar behavior as clicking on a link
+    setTimeout(function(){
+    	window.location.href = "https://www.abramexpedited.com/";
+
+     }, 15000);
+    
+}
+</script>
+
+<div style="height: 30px;"></div>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="custom.js"></script>
+<script src="datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+</body>
+</html> 
+

@@ -1,6 +1,7 @@
 <?php
 require_once('PHPMailer/PHPMailerAutoload.php');
 require_once('TemplateBilder.php');
+require_once('Template.php');
 
 
 foreach ($_POST as $key => $value) {
@@ -13,40 +14,86 @@ foreach ($_POST as $key => $value) {
 
 /*na frontendu u html inputim namesti maksimalan broj karaktera maxlength="10"  */
 
-getallemploers($_POST);
+getallemploers($_POST, $_FILES);
 
-function getallemploers($post)
+function getallemploers($post, $files)
 {
 
     $temp = new TemplateBilder();
-
     $fileName = $temp->employerTemplate(sortDataByName('employer_', $post, 15), $post);
     array_push($fileName, $temp->futureEmployeeTemplate(
-        sortDataByName('previous_', $post, 5),
-        sortDataByName('accident_', $post, 5),
-        sortDataByName('convicti_', $post, 4),
-        sortDataByName('employer_', $post, 15),
-        $post
-    )
-    );
+                sortDataByName('previous_', $post, 5),
+                sortDataByName('accident_', $post, 5),
+                sortDataByName('convicti_', $post, 4),
+                sortDataByName('employer_', $post, 15),
+                $post
+            )
+        );
 
     $userapp = $post['first_name'] ." ". $post['last_name'] ." - Aplication for employment";   
     $bodyText = $post['first_name'] ." ". $post['last_name'] ." - applied for job";
 
+    $firstname = $temp->clean($post['first_name']);
+    $lastname = $temp->clean( $post['last_name']);
 
-	$success = sendMail('dizajnistampa@gmail.com', $fileName, $userapp, $bodyText);
-    if ($success){
-/*        $max = sizeof($fileName);
-        for($i = 0; $i < $max; $i++) {
-            deletefile($fileName[$i]);
+    $name1 = 'Cdl_'.$firstname."_".$lastname."_".time();
+    $img1 = '';
+    $img1 = $files['img_1'];
+
+    $name2 = 'Med_'.$firstname."_".$lastname."_".time();
+    $img2 = '';
+    $img2 = $files['img_2'];
+
+    if ( $img1['name'] != '') { array_push($fileName,  imgupload($img1, $name1)); }
+
+    if ( $img2['name'] != '') { array_push($fileName, imgupload($img2, $name2)); }
+
+    header('Location: redirect.html');
+
+$success = sendMail('dizajnistampa@gmail.com', $fileName, $userapp, $bodyText);
+
+
+    
+
+        if ($success){
+            $max = sizeof($fileName);
+            for($i = 0; $i < $max; $i++) {
+                deletefile($fileName[$i]);
+            }
+
+            sendMail($post['mail'], '', 'You applied for job at Abram Expedited Llc', '');
         }
 
-        sendMail($post['mail'], '', $userapp, $bodyText);*/
-    }
 
-/* header('Location: https://www.abramexpedited.com/'); */
+
 
 }
+
+
+
+function imgupload($img, $name){
+
+
+if ($img['size'] < 10928375) {
+
+    $imginfo = $img['name'];
+    $info = pathinfo($imginfo);
+    $ext = $info['extension'];
+    $newname = $name .".". $ext;
+    $target = 'pdf/' . $newname;
+    move_uploaded_file($img['tmp_name'], $target);
+
+    return $target;
+
+    }
+    else {
+        header('Location: http://ap.example/');
+    }
+
+}
+
+
+
 
 /* sortDataByName( $dataByname, $post, $numberOfinput)
  * $dataByname int number of input fealt for category.
@@ -90,6 +137,10 @@ function deletefile($fileName)
 function sendMail($sendTo, $fileName, $userapp, $bodyText)
 {
 
+
+/* safety.abramexpedited@gmail.com */
+    $temp = new Template();
+
     include 'pass.php';
     $mail = new PHPMailer();
 
@@ -110,11 +161,15 @@ function sendMail($sendTo, $fileName, $userapp, $bodyText)
     );
     $mail->Username = $email;
     $mail->Password = $pass;
-/*    $mail->setFrom('dizajnistampa@gmail.com', 'web');*/
-    $mail->addAddress($sendTo, 'print');
+    $mail->setFrom('dizajnistampa@gmail.com', 'From');
+    $mail->addAddress($sendTo, 'SendTo');
     $mail->Subject = $userapp;
-   /* $mail->msgHTML('test');*/
     $mail->Body = $bodyText;
+
+    if ($fileName == '' && $bodyText =='' ) {
+        $mail->Body = '';
+        $mail->msgHTML($temp->mailSendToEmpleyee());   
+    }
 
     if ($fileName) {     
         $max = sizeof($fileName);
@@ -123,8 +178,9 @@ function sendMail($sendTo, $fileName, $userapp, $bodyText)
         }
     }   
 
-
     $mail->send();
+    unset($mail);
+
     return 1;
 }
 

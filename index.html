@@ -3,6 +3,7 @@
 <head>
     <title>APPLICATION FOR EMPLOYMENT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="datetimepicker/jquery.datetimepicker.css">
@@ -10,9 +11,30 @@
 </head>
 <body>
 
+
+
+<div id="notification" style="width: 100%; height: 100%; z-index: 1000; background-color: rgba(0,0,0,0.7); position: fixed; display: none;">
+
+    <div style="width: 100%; height: 200px; top: 20%; position: relative; background-color: #FFFFFF">
+        <div style="border-left: 5px solid #21618C;  padding: 10px; margin-left: 20%; margin-right: 20%; margin-bottom:10px; margin-top: 10px;">
+            <h3 style="color:#21618C;">
+                Please wait for job application to be sent...
+            </h3>
+            <p>
+             This could take up to few minutes
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
 <div class="container">
-    <form id="emploer" method="post" action="pta.php">
+
+    <form id="emploerForm" method="post" action="pta.php" enctype="multipart/form-data" >
         <input name="user_time" type="hidden" class="form-control" value="" id="user_time">
+        <input type="hidden" name="urlprezent" id="urlprezent" value="">
 
         <div style="text-align: center; padding: 20px;">
             <h4>
@@ -133,8 +155,36 @@
                 </button>
             </div>
 
-
         </div>
+
+
+         <div class="border">
+                <h6>
+                    PLEASE UPLOAD IMAGE OF YOUR CDL AND MEDICAL
+                </h6>
+                <p>
+                    Max size per file 7mb.
+                </p>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                        <label for="CDL">Please upload CDL: </label>
+                        <input type="file" name="img_1" id="CDL" class="form-control-file">
+                        <p class="filetolarge">File is larger than 7mb, can not be submitted.</p>
+                    </div>
+                </div> 
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                        <label for="medical">Please upload Medical: </label>
+                        <input type="file" name="img_2" id="medical" class="form-control-file">
+                        <p class="filetolarge">File is larger than 7mb, can not be submitted.</p>
+                    </div>
+                </div>   
+
+        </div> 
+
+
+
+
         <div class="border">
             <div>
                 <h6>
@@ -375,7 +425,7 @@
                 </div>
                 <div class="col-md-4 mb-3">
                     <input name="denied_license_explain" type="text" class="form-control" id="denied_license"
-                           placeholder="If  yes ,  explain:">
+                           placeholder="If  yes,  explain:">
                 </div>
 
             </div>
@@ -392,7 +442,7 @@
                 </div>
                 <div class="col-md-4 mb-3">
                     <input name="suspended_license_explain" type="text" class="form-control" id="suspended_license"
-                           placeholder="If  yes ,  explain:">
+                           placeholder="If  yes,  explain:">
                 </div>
 
             </div>
@@ -581,9 +631,13 @@ Accuracy Of The Information."
     </div>
 </div>
 
-        <button type="submit" class="btn btn-primary col-md-12">Submit</button>
+        <button type="submit" class="btn btn-primary col-md-12"  data-toggle="" data-target="#myModal">Submit</button>
     </form>
 </div>
+
+
+
+
 <div style="height: 30px;"></div>
 <script src="jquery-3.3.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>

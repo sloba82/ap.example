@@ -5,6 +5,53 @@ class Template
 {
 
 
+public function mailSendToEmpleyee () {
+
+		$mail = '
+<!DOCTYPE html>
+
+<head>
+</head>
+	<body>
+
+    <div style="width: 100%; background-color: #FFFFFF; ">
+        <div style="border-left: 5px solid #21618C;  padding: 10px; margin-left: 10%; margin-bottom:10px;">
+            <h3 style="color:#21618C;">
+           		You applied for job at Abram Expedited Llc <br>	
+ 				Thank you for application! <br>
+                We will contact you soon as possible.
+            </h3>
+            <p>
+             Please contact us if you have any question regarding your job application <br>
+	            <a href="https://www.abramexpedited.com/">
+	            Click here to visit our home page www.abramexpedited.com
+	            </a>
+            </p>
+
+            <p>
+            <b>Abram Expedited Llc</b> <br>
+            5087 Matrin Luther King Jr<br>
+            Fort Worth, Tx 76119 <br>
+            Telephone: 817-482-6991<br>
+            Tel. extension: <br>
+            x1 Dispatch <br>
+			x2 Safety <br>
+			x3 Accounting
+
+            </p>
+         
+        </div>
+    </div>
+
+	</body>
+</html>
+		';
+
+		return $mail;
+	}
+
+
+
     public function futureEmployeeBildTemplate(
         $previous,
         $accident,
@@ -519,7 +566,7 @@ class Template
 		    <li>Attention:            <b>DARKO  ABRAMOVIC</b></li>
 		    <li>Street:               <b>5087 MATRIN LUTHER KING JR </b></li>
 		    <li>City, State, Zip:     <b>FORT WORTH,  TX 76119</b></li>
-		    <li>Telephone:            <b>817-917-8735</b></li>
+		    <li>Telephone:            <b>817-482-6991</b></li>
 	    </ul>
 	  </li>
 	</ul>
@@ -700,16 +747,16 @@ class Template
 		</div>
 
 		<div style="margin-top: 5px;">
-			4.	Has this person committed other violations of Subpart B of Part 382, or Part 40? Yes <input type="checkbox" name="violations_yes" value="yes" /> No <input type="checkbox" name="violations_no" value="no"/>
+			4.	Has this person committed other violations of Subpart B of Part 382, or Part 40? Yes <input type="checkbox" name="1violations_yes" value="yes" /> No <input type="checkbox" name="3violations_no" value="no"/>
 		</div>
 
 		<div style="margin-top: 5px;">
 			5.	If this person has violated a DOT drug and alcohol regulation, did this person complete a SAP-prescribed n program in your employ, including return-to-duty and follow-up tests?
-			If yes, please send documentation back with this form. Yes <input type="checkbox" name="violations_yes" value="yes" /> No <input type="checkbox" name="violations_no" value="no"/>
+			If yes, please send documentation back with this form. Yes <input type="checkbox" name="2violations_yes" value="yes" /> No <input type="checkbox" name="1violations_no" value="no"/>
 		</div>
 		<div style="margin-top: 5px;">
 			6.  For a driver who successfully completed a SAP&#39;s rehabilitation referral and remained in your employ, did this driver subsequently have an alcohol test result of 0.04 or greater,
-			 a verified positive drug test, or refuse to be tested? Yes <input type="checkbox" name="violations_yes" value="yes" /> No <input type="checkbox" name="violations_no" value="no"/>
+			 a verified positive drug test, or refuse to be tested? Yes <input type="checkbox" name="3violations_yes" value="yes" /> No <input type="checkbox" name="2violations_no" value="no"/>
 		</div>
 
 		<div style="margin-top: 10px;">
@@ -731,7 +778,7 @@ class Template
 				City, State, Zip: <input type="text" name="cityzipcompany" size="70"/> Telephone: <input type="text" name="telephonecompany" size="50"/>
 			</div>
 			<div style="margin-top: 5px;">
-				Part 3 Completed by (Signiture): <input type="text" name="signiturecompany" size="70"/> Date: <input type="text" name="signiturecompany" size="30"/>
+				Part 3 Completed by (Signiture): <input type="text" name="signiturecompany" size="70"/> Date: <input type="text" name="signiturecompany2" size="30"/>
 			</div>
 
 		</div>

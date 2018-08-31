@@ -230,6 +230,35 @@ $(function () {
         });
     });
 
+ 
+
+var curenturl = $(location).attr('href');
+ $('#urlprezent').val(curenturl);
+
+
+
+$("form").submit(function () {
+    $('#notification').css('display', 'block');
+});
+
+
+ $("input:file").change(function (event){ 
+    var curentfile = event.target.id;
+
+   if (this.files[0].size > 7599999){
+        $('#' + curentfile).next().css('display', 'block');
+        $(":submit").attr('disabled', true);
+   }
+
+   if (this.files[0].size < 7599999){
+        $('#' + curentfile).next().css('display', 'none');
+        $(":submit").attr('disabled', false);
+   }
+
+
+});
+
+
 
 });
 
